@@ -5,6 +5,7 @@
 
 #read food production datasets
 ##FAOSTAT database - is available at https://www.fao.org/faostat/en/#data/QCL
+##Fishstat data - is https://www.fao.org/fishery/en/statistics/software/fishstatj
 
 ## Start by merging all datasets of the FOWCUS database into a single dataframe
 # Initialize an empty list to collect DataFrames
