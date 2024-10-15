@@ -12,7 +12,7 @@ dataframes: list[pd.DataFrame] = []
 
 # Loop through each sheet, read data into a DataFrame, and add it to the list
 for tab in tab_list:
-    worksheet = unavoidable_foodwaste_db.worksheet(tab)
+    worksheet = fowcus_db.worksheet(tab)
     data = worksheet.get_all_values()
     df = pd.DataFrame(data)
     df.columns = df.iloc[0]  # Set the first row as header
@@ -39,7 +39,7 @@ all_data['share_%'] = pd.to_numeric(all_data['share_%'], errors='coerce')
 # Data can be retrieved from https://www.fao.org/dad-is/data/en/
 # Merge live-weight data with the FAO-augmented FOWCUS database to have an average live-weight column
 
-# Function to calculate part amounts for the FAO-augmented FOWCUS
+# Function to calculate avoidable, unavoidable, and potentially avoidable food waste with the FAO-augmented FOWCUS
 
 def calculate_part_amounts(group):
     group['adjusted_share'] = group['share_%']
